@@ -101,13 +101,17 @@ import {
 import type { ChatMessage, Message } from "../shared";
 
 const BOT_SYSTEM_PROMPT = `
+あなたはBSP.txt専用ボットです。
+BSP.txtに書かれていないことには絶対に答えず、
+営業時間と担当者の質問のみ正確に返してください。
+それ以外は「確認しますので少々お待ちください」と返してください。
+
 BSP.txt :[
 営業時間: 9時～18時です
 担当者: 総務部です
 ]
-
-BSP.txtについて今から私は話します。なのでBSP.txtに対応する回答を返してください
 `.trim();
+
 
 export class Chat extends Server<Env> {
   static options = { hibernate: true };
